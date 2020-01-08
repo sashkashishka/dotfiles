@@ -1,0 +1,117 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+# command=~/.config/i3blocks/$BLOCK_NAME
+# separator_block_width=15
+# markup=none
+# 
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+
+[volume]
+label=♪
+#label=VOL
+interval=once
+signal=10
+command=~/.config/i3blocks/volume/volume
+
+#STEP=5%
+
+
+
+# Network interface monitoring
+#
+[essid]
+INTERFACE=wlp2s0
+color=#00FF00
+interval=10
+label=
+separator=false
+command=~/.config/i3blocks/essid/essid
+
+
+[nm-vpn]
+label=VPN:
+interval=5
+command=~/.config/i3blocks/nm-vpn/nm-vpn
+
+[wifi]
+INTERFACE=wlp2s0
+interval=10
+command=~/.config/i3blocks/wifi/wifi
+
+
+
+
+# Battery indicator
+# The battery instance defaults to 0.
+[battery]
+# label=BAT
+label=⚡
+interval=30
+command=~/.config/i3blocks/battery/battery
+
+
+[key_layout]
+command=~/.config/i3blocks/key_layout/key_layout
+label=Layout
+interval=1
+
+
+# Date Time
+
+[calendar]
+command=~/.config/i3blocks/calendar/calendar
+interval=1
+LABEL= 
+DATEFMT=+%d-%m-%Y %H:%M:%S
+# SHORTFMT=+%H:%M:%S
+HEIGHT=200
+WIDTH=250
+
+
+
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#[keyindicator]
+#KEY=CAPS
+#markup=pango
+#interval=once
+#signal=11
+
+#[keyindicator]
+#KEY=NUM
+#markup=pango
+#interval=once
+#signal=11
