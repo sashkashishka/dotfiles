@@ -9,7 +9,7 @@ font pango: RobotoMono Nerd Font 13
 floating_modifier $super
 
 #autostart
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/nitish-meena-37745-unsplash.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/bay.jpeg
 exec --no-startup-id xsettingsd &
 exec --no-startup-id setxkbmap -layout us,ru,ua -option 'grp:shift_caps_toggle'
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
@@ -22,8 +22,8 @@ bindsym $super+Return exec alacritty
 bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 2 -font 'RobotoMono Nerd Font 13'
 
 # common apps keybinds
-bindsym Print exec --no-startup-id i3-scrot 
-bindsym Shift+Print --release exec --no-startup-id i3-scrot -w 
+bindsym Print exec --no-startup-id flameshot gui
+# bindsym Shift+Print --release exec --no-startup-id i3-scrot -w
 bindsym $super+Shift+f exec --no-startup-id alacritty -e ranger
 
 #change volume

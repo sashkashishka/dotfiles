@@ -22,6 +22,25 @@ function! myspacevim#after() abort
       call CocAction('doHover')
     endif
   endfunction
+
+  function! OpenZippedFile(f)
+    " get number of new (empty) buffer
+    let l:b = bufnr('%')
+    " construct full path
+    let l:f = substitute(a:f, '\/zip\:\(.*\).zip/', 'zipfile:\1.zip::', '')
+    let l:f1 = substitute(l:f, '\.yarn\/\(.*\)\/cache', '.yarn/cache', '')
+
+    " swap back to original buffer
+    b #
+    " delete new one
+    exe 'bd! ' . l:b
+    " open buffer with correct path
+    sil exe 'e ' . l:f1
+    " read in zip data
+    call zip#Read(l:f1, 1)
+  endfunction
+
+  au BufReadCmd /zip:*.yarn/*.zip/* call OpenZippedFile(expand('<afile>'))
 endfunction
 
 

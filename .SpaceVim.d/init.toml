@@ -8,6 +8,17 @@
 
 # All SpaceVim option below [option] section
 [options]
+    disabled_plugins = [
+      "deoplete-dictionary",
+      "neoinclude.vim",
+      "neosnippet-snippets",
+      "neopairs.vim",
+      "vim-snippets",
+      "vim-css-color",
+      "scss-syntax.vim",
+      "vim-less",
+      "vim-stylus"
+    ]
     # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
     # layer
@@ -30,8 +41,9 @@
     filetree_direction = 'left'
     sidebar_width = 40
     autocomplete_method = 'coc'
+    spacevim_autocomplete_method = 'coc'
     enable_neomake = false
-    enable_ale = true
+    enable_ale = false
     lint_on_the_fly =  true
     bootstrap_after = 'myspacevim#after'
 
@@ -44,6 +56,7 @@
   name = 'autocomplete'
   auto_completion_return_key_behavior = "complete"
   auto_completion_tab_key_behavior = "smart"
+  auto_completion_enable_snippets_in_popup = false
 
 [[layers]]
   name = 'shell'
@@ -57,11 +70,22 @@
   name = 'git'
   git-plugin = 'fugitive'
 
-[[layers]]
-  name = 'lang#javascript'
+# [[layers]]
+  # name = 'lang#javascript'
 
 # [[layers]]
   # name = "lang#typescript"
+
+[[layers]]
+  name = "checkers"
+  enable = false
+
+[[layers]]
+  name = "format"
+  enable = false
+
+[[layers]]
+  name = "lsp"
 
 [[layers]]
   name = "lang#markdown"
@@ -77,6 +101,9 @@
 
 [[layers]]
   name = 'lang#docker'
+
+[[layers]]
+  name = 'lang#prolog'
 
 [[custom_plugins]]
   name = 'maxmellon/vim-jsx-pretty'
