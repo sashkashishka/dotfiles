@@ -9,8 +9,8 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 # Launch polybar
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload bottom &
+    MONITOR=$m polybar --reload -c ~/.config/polybar/config.ini bottom &
   done
 else
-  polybar --reload bottom &
+  polybar --reload -c ~/.config/polybar/config.ini bottom &
 fi

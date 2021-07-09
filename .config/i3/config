@@ -3,27 +3,25 @@ set $super Mod4
 set $alt Mod1
 
 # set font
-font pango: RobotoMono Nerd Font 13
+font pango: RobotoMono Nerd Font 14
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
 
 #autostart
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/bay.jpeg
-exec --no-startup-id xsettingsd &
+exec --no-startup-id nitrogen --set-zoom-fill ~/Pictures/wallpaper.jpg
+# exec --no-startup-id xsettingsd &
 exec --no-startup-id setxkbmap -layout us,ru,ua -option 'grp:shift_caps_toggle'
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # start a terminal
 bindsym $super+Return exec alacritty
 
 # start dmenu (a program launcher)
-# bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=12'"
-bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 2 -font 'RobotoMono Nerd Font 13'
+bindsym $super+d exec --no-startup-id rofi -show drun
 
 # common apps keybinds
 bindsym Print exec --no-startup-id flameshot gui
-# bindsym Shift+Print --release exec --no-startup-id i3-scrot -w
 bindsym $super+Shift+f exec --no-startup-id alacritty -e ranger
 
 #change volume
@@ -130,7 +128,7 @@ mode "$mode_system" {
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -149,4 +147,4 @@ client.background #242424 #242424 #242424
 client.focused #4A4A4A #4A4A4A #e5e5e5 #4A4A4A
 client.unfocused #4A4A4A #222222 #aaaaaa #222222
 client.focused_inactive #4A4A4A #222222 #a9a9a9 #222222
-client.urgent #4A4A4A #4A4A4A #f7f7f7 #4A4A4A
+client.urgent #4A4A4A #4A4A4A #f7f7f7 #4A4A4Ac

@@ -1,0 +1,8 @@
+rofi.modi: window,run,ssh
+rofi.width: 40
+rofi.lines: 15
+rofi.columns: 1
+rofi.font: RobotoMono Nerd Font 14
+rofi.location: 0
+rofi.matching: fuzzy
+rofi.theme: /home/sashka/.local/share/rofi/themes/gruvbox.rasi
